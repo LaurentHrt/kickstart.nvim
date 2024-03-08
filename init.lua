@@ -12,6 +12,7 @@ vim.opt.rtp:prepend(lazypath)
 require('lazy').setup({
 
   'tpope/vim-sleuth',
+  'tpope/vim-fugitive',
 
   {
     'neovim/nvim-lspconfig',
