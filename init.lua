@@ -191,7 +191,22 @@ vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower win
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
 -- custom keymaps
-vim.keymap.set('n', '<leader>e', '<cmd>Explore<CR>')
+vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = '[E]xplore files' })
+-- Same navigation than tmux but with C-w instead of C-a (tmux prefix)
+vim.keymap.set('n', '<C-w>-', '<cmd>split<CR>', { desc = 'Vertical split' })
+vim.keymap.set('n', '<C-w>|', '<cmd>vsplit<CR>', { desc = 'Horizontal split' })
+
+-- Tab navigation
+vim.keymap.set('n', '<C-t>c', '<cmd>tabnew<CR>', { desc = '[C]reate tab' })
+vim.keymap.set('n', '<C-t>n', '<cmd>tabnext<CR>', { desc = '[N]ext tab' })
+vim.keymap.set('n', '<C-t>p', '<cmd>tabprevious<CR>', { desc = '[P]revious tab' })
+vim.keymap.set('n', '<C-t>q', '<cmd>tabclose<CR>', { desc = '[Q]uit tab' })
+
+-- Windows resizing
+vim.keymap.set('n', '<C-w><C-l>', '10<C-w><', { desc = 'Decrease width' })
+vim.keymap.set('n', '<C-w><C-h>', '10<C-w>>', { desc = 'Increase width' })
+vim.keymap.set('n', '<C-w><C-j>', '10<C-w>-', { desc = 'Decrease height' })
+vim.keymap.set('n', '<C-w><C-k>', '10<C-w>+', { desc = 'Increase height' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
