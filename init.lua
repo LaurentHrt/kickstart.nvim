@@ -208,6 +208,15 @@ vim.keymap.set('n', '<C-w><C-h>', '10<C-w>>', { desc = 'Increase width' })
 vim.keymap.set('n', '<C-w><C-j>', '10<C-w>-', { desc = 'Decrease height' })
 vim.keymap.set('n', '<C-w><C-k>', '10<C-w>+', { desc = 'Increase height' })
 
+-- Same navigation than tmux but with C-w instead of C-a (tmux prefix)
+vim.keymap.set('n', '<C-w>-', '<cmd>split<CR>', { desc = 'Vertical split' })
+vim.keymap.set('n', '<C-w>|', '<cmd>vsplit<CR>', { desc = 'Horizontal split' })
+
+vim.keymap.set('n', '<C-w><C-l>', '10<C-w><', { desc = 'Decrease width' })
+vim.keymap.set('n', '<C-w><C-h>', '10<C-w>>', { desc = 'Increase width' })
+vim.keymap.set('n', '<C-w><C-j>', '10<C-w>-', { desc = 'Decrease height' })
+vim.keymap.set('n', '<C-w><C-k>', '10<C-w>+', { desc = 'Increase height' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
@@ -439,6 +448,8 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = '[G]it [B]ranch' })
+      vim.keymap.set('n', '<leader>gl', builtin.git_commits, { desc = '[G]it [L]og' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
