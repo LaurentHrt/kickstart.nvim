@@ -165,7 +165,7 @@ vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 -- Diagnostic keymaps
 vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
+vim.keymap.set('n', '<leader>de', vim.diagnostic.open_float, { desc = 'Show [D]iagnostic [E]rror messages' })
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
@@ -204,6 +204,15 @@ vim.keymap.set('n', '<C-t>p', '<cmd>tabprevious<CR>', { desc = '[P]revious tab' 
 vim.keymap.set('n', '<C-t>q', '<cmd>tabclose<CR>', { desc = '[Q]uit tab' })
 
 -- Windows resizing
+vim.keymap.set('n', '<C-w><C-l>', '10<C-w><', { desc = 'Decrease width' })
+vim.keymap.set('n', '<C-w><C-h>', '10<C-w>>', { desc = 'Increase width' })
+vim.keymap.set('n', '<C-w><C-j>', '10<C-w>-', { desc = 'Decrease height' })
+vim.keymap.set('n', '<C-w><C-k>', '10<C-w>+', { desc = 'Increase height' })
+
+-- Same navigation than tmux but with C-w instead of C-a (tmux prefix)
+vim.keymap.set('n', '<C-w>-', '<cmd>split<CR>', { desc = 'Vertical split' })
+vim.keymap.set('n', '<C-w>|', '<cmd>vsplit<CR>', { desc = 'Horizontal split' })
+
 vim.keymap.set('n', '<C-w><C-l>', '10<C-w><', { desc = 'Decrease width' })
 vim.keymap.set('n', '<C-w><C-h>', '10<C-w>>', { desc = 'Increase width' })
 vim.keymap.set('n', '<C-w><C-j>', '10<C-w>-', { desc = 'Decrease height' })
@@ -409,6 +418,8 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>sr', builtin.resume, { desc = '[S]earch [R]esume' })
       vim.keymap.set('n', '<leader>s.', builtin.oldfiles, { desc = '[S]earch Recent Files ("." for repeat)' })
       vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find existing buffers' })
+      vim.keymap.set('n', '<leader>gb', builtin.git_branches, { desc = '[G]it [B]ranch' })
+      vim.keymap.set('n', '<leader>gl', builtin.git_commits, { desc = '[G]it [L]og' })
 
       -- Slightly advanced example of overriding default behavior and theme
       vim.keymap.set('n', '<leader>/', function()
