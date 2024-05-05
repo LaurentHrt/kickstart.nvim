@@ -215,6 +215,13 @@ vim.keymap.set('n', '<leader>ng', '<cmd>Neogit kind=auto<CR>', { desc = '[N]eo[g
 vim.keymap.set('n', '<C-w>-', '<cmd>split<CR>', { desc = 'Vertical split' })
 vim.keymap.set('n', '<C-w>|', '<cmd>vsplit<CR>', { desc = 'Horizontal split' })
 
+-- Tab navigation
+vim.keymap.set('n', '<C-t>c', '<cmd>tabnew<CR>', { desc = '[C]reate tab' })
+vim.keymap.set('n', '<C-t>n', '<cmd>tabnext<CR>', { desc = '[N]ext tab' })
+vim.keymap.set('n', '<C-t>p', '<cmd>tabprevious<CR>', { desc = '[P]revious tab' })
+vim.keymap.set('n', '<C-t>q', '<cmd>tabclose<CR>', { desc = '[Q]uit tab' })
+
+-- Windows resizing
 vim.keymap.set('n', '<C-w><C-l>', '10<C-w><', { desc = 'Decrease width' })
 vim.keymap.set('n', '<C-w><C-h>', '10<C-w>>', { desc = 'Increase width' })
 vim.keymap.set('n', '<C-w><C-j>', '10<C-w>-', { desc = 'Decrease height' })
