@@ -190,9 +190,6 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
--- custom keymaps
-vim.keymap.set('n', '<leader>e', '<cmd>Oil<CR>', { desc = '[E]xplore files' })
-
 -- Same navigation than tmux but with C-w instead of C-a (tmux prefix)
 vim.keymap.set('n', '<C-w>-', '<cmd>split<CR>', { desc = 'Vertical split' })
 vim.keymap.set('n', '<C-w>|', '<cmd>vsplit<CR>', { desc = 'Horizontal split' })
@@ -208,8 +205,6 @@ vim.keymap.set('n', '<C-w><C-l>', '10<C-w><', { desc = 'Decrease width' })
 vim.keymap.set('n', '<C-w><C-h>', '10<C-w>>', { desc = 'Increase width' })
 vim.keymap.set('n', '<C-w><C-j>', '10<C-w>-', { desc = 'Decrease height' })
 vim.keymap.set('n', '<C-w><C-k>', '10<C-w>+', { desc = 'Increase height' })
-
-vim.keymap.set('n', '<leader>ng', '<cmd>Neogit kind=auto<CR>', { desc = '[N]eo[g]it' })
 
 -- Same navigation than tmux but with C-w instead of C-a (tmux prefix)
 vim.keymap.set('n', '<C-w>-', '<cmd>split<CR>', { desc = 'Vertical split' })
