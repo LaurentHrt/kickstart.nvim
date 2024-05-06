@@ -393,7 +393,7 @@ require('lazy').setup({
         -- },
         -- pickers = {}
         defaults = {
-          file_ignore_patterns = { '.git', 'node_modules' },
+          file_ignore_patterns = { 'node_modules' },
         },
         pickers = {
           find_files = {
