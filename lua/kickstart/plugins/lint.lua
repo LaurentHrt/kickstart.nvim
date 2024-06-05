@@ -5,12 +5,26 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
     config = function()
       local lint = require 'lint'
+      local eslint = lint.linters.eslint_d
+
       lint.linters_by_ft = {
         markdown = { 'markdownlint' },
         javascript = { 'eslint_d' },
         typescript = { 'eslint_d' },
         javascriptreact = { 'eslint_d' },
         typescriptreact = { 'eslint_d' },
+      }
+
+      -- https://www.reddit.com/r/neovim/comments/1cbb4s6/in_lazy_in_neovim_could_not_parse_linter_output/
+      eslint.args = {
+        '--no-warn-ignored', -- <-- this is the key argument
+        '--format',
+        'json',
+        '--stdin',
+        '--stdin-filename',
+        function()
+          return vim.api.nvim_buf_get_name(0)
+        end,
       }
 
       -- To allow other plugins to add linters to require('lint').linters_by_ft,
