@@ -1,0 +1,4 @@
+- find a way to save my workspace so i can reopen it like it was after quitting vim
+- trouver un moyen de faire un resize de window plus facile (comme tmux)
+- trouver comment redemarre cmp sans tout quitter
+- trouver l'origine du probleme de cmp
