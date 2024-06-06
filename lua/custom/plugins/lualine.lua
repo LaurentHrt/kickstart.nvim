@@ -8,7 +8,8 @@ return {
         section_separators = { left = '', right = '' },
       },
       sections = {
-        lualine_x = { { 'filename', path = 1 }, 'encoding', 'fileformat', 'filetype' },
+        lualine_x = { { 'filename', path = 1 }, 'filetype' },
+        -- lualine_x = { { 'filename', path = 1 }, 'encoding', 'fileformat', 'filetype' },
       },
     }
   end,
